@@ -19,7 +19,8 @@ public class DisableElementHandle1 {
 		WebElement calElement=driver.findElement(By.xpath("//input[@placeholder='Select A Date']"));
 		Thread.sleep(3000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("document.querySelector(\"#demoUI > main > section > article > aside > div > aside > div > article > div > div > div > div > input\").value='26/01/25';");
+//		jse.executeScript("document.querySelector(\"#demoUI > main > section > article > aside > div > aside > div > article > div > div > div > div > input\").value='26/01/25';");
+		jse.executeScript("document.querySelector(\"#demoUI > main > section > article > aside > div > aside > div > article > div > div > div > div > input\").value=arguments[0];","06/02/25");
 		Thread.sleep(3000);
 	}
 }
