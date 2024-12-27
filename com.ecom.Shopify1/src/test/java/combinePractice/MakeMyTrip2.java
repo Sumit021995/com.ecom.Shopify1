@@ -25,17 +25,17 @@ public class MakeMyTrip2 {
         Thread.sleep(2000);
 
         // Close pop-ups
-        driver.findElement(By.xpath("//span[@class='commonModal_close']")).click();
+        driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
         
         // Enter From City
         driver.findElement(By.xpath("//input[@placeholder='From']")).sendKeys(fromCity);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//li[@class='react-autosuggest__suggestion react-autosuggest__suggestion--first']")).click();
+        driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
         
         // Enter To City
         driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys(toCity);
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//li[@class='react-autosuggest__suggestion react-autosuggest__suggestion--first']")).click();
+        driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
         
         // Select Travel Date
         WebElement month = driver.findElement(By.xpath("//div[@class='DayPicker-Caption']/div"));

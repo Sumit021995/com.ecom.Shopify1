@@ -13,6 +13,7 @@ public class DynamicXpath {
 	public static void main(String[] args) throws InterruptedException {
 		String hour = "10";
 		String expectedMin = "55";
+		String timeStamp="AM";
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://demoapps.qspiders.com/ui?scenario=1");
@@ -27,7 +28,7 @@ public class DynamicXpath {
 //		act.dragAndDropBy(hourHand, -80, 51).perform();
 		act.dragAndDrop(hourHand,driver.findElement(By.xpath("//span[text()='"+expectedMin+"']"))).perform();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[text()='PM']")).click();
+		driver.findElement(By.xpath("//span[text()='"+timeStamp+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[text()='OK']")).click();
 		Thread.sleep(1000);
