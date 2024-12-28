@@ -12,7 +12,7 @@ public class MakeMyTrip2 {
         String fromCity = "new delhi";
         String toCity = "dubai";
         String expectedMonth = "April 2025";
-        String expectedDay = "28";
+        String expectedDay = "25";
         String expectedAdult = "2";
         String expectedChild = "1";
         String expectedTravelClass = "Premium Economy";
@@ -27,12 +27,20 @@ public class MakeMyTrip2 {
         // Close pop-ups
         driver.findElement(By.xpath("//span[@class='commonModal__close']")).click();
         
+        Thread.sleep(2000);
         // Enter From City
+//        driver.findElement(By.xpath("//input[@placeholder='From']")).click();
+        driver.findElement(By.id("fromCity")).click();
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@placeholder='From']")).sendKeys(fromCity);
         Thread.sleep(2000);
         driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
         
+        Thread.sleep(2000);
         // Enter To City
+//        driver.findElement(By.xpath("//input[@placeholder='To']")).click();
+        driver.findElement(By.id("toCity")).click();
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys(toCity);
         Thread.sleep(2000);
         driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
@@ -48,15 +56,18 @@ public class MakeMyTrip2 {
                 Thread.sleep(2000);
             }
         }
-        driver.findElement(By.xpath("//div[text()='" + expectedMonth + "']/../../div[@class='DayPicker-Body']//p[text()='" + expectedDay + "']")).click();
         Thread.sleep(2000);
-
+        driver.findElement(By.xpath("//div[text()='"+expectedMonth+"']/../../div[@class='DayPicker-Body']//p[text()='"+expectedDay+"']")).click();
+        Thread.sleep(2000);
+      //div[text()='April 2025']/../../div[@class='DayPicker-Body']//p[text()='25']
         // Select Travelers
         driver.findElement(By.xpath("//label[@for='travellers']")).click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']//li[text()='" + expectedAdult + "']")).click();
-        driver.findElement(By.xpath("//ul[@class='guestCounter font12 darkText gbCounter childCounter']//li[text()='" + expectedChild + "']")).click();
-        driver.findElement(By.xpath("//ul[@class='guestCounter classSelect font12 darkText']//li[text()='" + expectedTravelClass + "']")).click();
+        driver.findElement(By.xpath("//ul[@class='guestCounter font12 darkText gbCounter']//li[text()='"+expectedAdult+"']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//div[@class='makeFlex column childCounter']//li[text()='"+expectedChild+"']")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//ul[@class='guestCounter classSelect font12 darkText']//li[text()='"+expectedTravelClass+"']")).click();
         Thread.sleep(2000);
 
         // Apply and Search
