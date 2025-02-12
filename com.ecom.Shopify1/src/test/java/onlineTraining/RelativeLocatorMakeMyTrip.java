@@ -4,15 +4,14 @@ package onlineTraining;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.locators.RelativeLocator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RelativeLocatorMakeMyTrip {
 	@FindBy(xpath=("//span[@class='commonModal__close']")) private WebElement mmtPopUp;
@@ -50,8 +49,12 @@ public class RelativeLocatorMakeMyTrip {
 		r.removePopup();
 		r.clickOnRoundTripText();
 		Thread.sleep(2000);
-		WebElement element = driver.findElement(RelativeLocator.with(By.xpath(null)).below(By.xpath(null)));
-		r.getIcon().click();
+		WebElement element = driver.findElement(RelativeLocator.with(By.xpath("//a")).below(By.xpath("//span[text()='Introducing myBiz']")));
+		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(element));
+		element.click();
+//		r.getIcon().click();
 //		Point p = r.getIcon().getLocation();
 //		Dimension pd = r.getIcon().getSize();
 //		Rectangle rd = r.getIcon().getRect();
