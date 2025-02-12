@@ -3,6 +3,7 @@ package onlineTraining;
 //import java.awt.Dimension;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 public class RelativeLocatorMakeMyTrip {
 	@FindBy(xpath=("//span[@class='commonModal__close']")) private WebElement mmtPopUp;
@@ -48,6 +50,7 @@ public class RelativeLocatorMakeMyTrip {
 		r.removePopup();
 		r.clickOnRoundTripText();
 		Thread.sleep(2000);
+		WebElement element = driver.findElement(RelativeLocator.with(By.xpath(null)).below(By.xpath(null)));
 		r.getIcon().click();
 //		Point p = r.getIcon().getLocation();
 //		Dimension pd = r.getIcon().getSize();
