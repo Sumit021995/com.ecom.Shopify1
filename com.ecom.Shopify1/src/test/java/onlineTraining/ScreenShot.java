@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 
+//import com.google.common.io.Files;
+
 public class ScreenShot {
 	public static void main(String[] args) throws IOException {
 		WebDriver driver = new ChromeDriver();
