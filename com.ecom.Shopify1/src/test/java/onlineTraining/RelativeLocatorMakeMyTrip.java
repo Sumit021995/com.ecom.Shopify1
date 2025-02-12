@@ -1,7 +1,11 @@
 package onlineTraining;
 
+//import java.awt.Dimension;
 import java.time.Duration;
 
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +17,11 @@ public class RelativeLocatorMakeMyTrip {
 	public WebElement getMmtPopUp()
 	{
 		return mmtPopUp;
+	}
+	@FindBy(xpath=("//span[@class='headerIconWrapper']")) private WebElement icon;
+	public WebElement getIcon()
+	{
+		return icon;
 	}
 	@FindBy(xpath=("//li[text()='Round Trip']")) private WebElement roundTripText;
 	public WebElement getRoundTripText()
@@ -39,8 +48,16 @@ public class RelativeLocatorMakeMyTrip {
 		r.removePopup();
 		r.clickOnRoundTripText();
 		Thread.sleep(2000);
+		r.getIcon().click();
+//		Point p = r.getIcon().getLocation();
+//		Dimension pd = r.getIcon().getSize();
+//		Rectangle rd = r.getIcon().getRect();
+//		driver.findElement().click();
+		Thread.sleep(2000);
 		driver.quit();
-		
+//		Options opt =driver.manage();
+//		Navigation n = driver.navigate();
+//		TargetLocator t =driver.switchTo();
 		
 		
 		
