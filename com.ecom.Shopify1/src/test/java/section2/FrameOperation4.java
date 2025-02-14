@@ -37,6 +37,7 @@ public class FrameOperation4 {
 		Actions act = new Actions(driver);
 		act.doubleClick(yesOption).perform();
 
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[text()='Next']")).click();
 		driver.findElement(By.xpath("//input[@jsname='YPqjbf']")).sendKeys("I am Sumit Saurav",Keys.TAB,"My birth palce is Sitamarhi");
 		driver.findElement(By.xpath("//span[text()='Submit']")).click();
