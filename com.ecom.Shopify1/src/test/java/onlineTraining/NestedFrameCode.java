@@ -1,9 +1,9 @@
 package onlineTraining;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,9 +16,10 @@ public class NestedFrameCode {
 		driver.get("file:///C:/Users/sumit/OneDrive/Desktop/mainPage.html");
 		driver.switchTo().frame(0);
 //		driver.findElement(RelativeLocator.with(By.xpath("//input")).toRightOf(By.xpath("//html//body//text()"))).sendKeys("Sumit021995");
-		List<WebElement> textFields =driver.findElements(By.xpath("//input"));	
+		WebElement textFieldUserName =driver.findElement(By.xpath("//input"));	
+		textFieldUserName.sendKeys("Sumit021995",Keys.TAB,"Sumit@123",Keys.TAB,"Sumit Saurav");
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.quit();
 		
 	
