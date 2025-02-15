@@ -12,6 +12,7 @@ public class ArrayListMethodsAddAndGet {
 		{
 			System.out.println(o);
 		}
+		System.out.println("==========");
 		for(int i=0;i<al.size();i++)
 		{
 			System.out.println(al.get(i));
