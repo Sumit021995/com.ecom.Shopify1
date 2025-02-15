@@ -15,9 +15,11 @@ public class NestedFrame4 {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("file:///C:/Users/sumit/OneDrive/Desktop/mainPage.html");
-		driver.switchTo().frame(0);
+//		driver.switchTo().frame(0);
 		Actions act = new Actions(driver);
 		act.moveToLocation(485, 155).click().sendKeys("Sumit021995",Keys.TAB,"Sumit@123",Keys.TAB,Keys.TAB,"Sumit Saurav").perform();
+//		driver.switchTo().defaultContent();
+		driver.findElement(By.partialLinkText("Google")).click();
 
 		Thread.sleep(2000);
 		driver.quit();
