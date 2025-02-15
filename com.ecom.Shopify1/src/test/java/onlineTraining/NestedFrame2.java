@@ -14,7 +14,6 @@ public class NestedFrame2 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("file:///C:/Users/sumit/OneDrive/Desktop/mainPage.html");
 		driver.switchTo().frame(0);
-//		Thread.sleep(2000);
 		driver.findElement(By.xpath("//body[contains(text(),'username')]/input[1]")).sendKeys("Sumit021995");
 		driver.switchTo().frame(0);
 		driver.findElement(By.xpath("//input")).sendKeys("Sumit Saurav");
