@@ -15,7 +15,9 @@ public class JSExecutorScrollBy {
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		Thread.sleep(2000);
 		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(2000);
 		jse.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(2000);
 		jse.executeScript("window.scrollBy(0,-500)");
 		
 	}
