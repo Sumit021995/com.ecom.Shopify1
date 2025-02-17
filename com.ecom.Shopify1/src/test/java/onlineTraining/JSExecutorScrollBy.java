@@ -13,5 +13,6 @@ public class JSExecutorScrollBy {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://demowebshop.tricentis.com/");
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,500)");
 	}
 }
