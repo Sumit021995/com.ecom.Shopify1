@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ArrayListMethod {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -19,8 +19,10 @@ public class ArrayListMethod {
 		for(int i=0;i<suggestions.size();i++)
 		{
 			System.out.println(suggestions.get(i).getText());
-		
+			System.out.println("----");
 		}
+		Thread.sleep(2000);
+		driver.quit();
 		
 	}
 }
