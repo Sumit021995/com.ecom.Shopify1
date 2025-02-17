@@ -22,6 +22,7 @@ public class ScrollToJSExecutorCode {
 		jse.executeScript("window.scrollTo(0,200)");
 		Thread.sleep(2000);
 		driver.quit();
+		System.out.println("Program Ends");
 		
 	}
 }
