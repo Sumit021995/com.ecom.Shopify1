@@ -14,7 +14,13 @@ public class ArrayListMethod {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.flipkart.com/");
-		List<WebElement> suggestions = driver.findElements(By.xpath(""));
+		driver.findElement(By.name("q")).sendKeys("shoe");
+		List<WebElement> suggestions = driver.findElements(By.xpath("//div[@class='YGcVZO _2VHNef']"));
+		for(int i=0;i<suggestions.size();i++)
+		{
+			System.out.println(suggestions.get(i).getText());
+		
+		}
 		
 	}
 }
