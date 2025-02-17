@@ -26,6 +26,7 @@ public class TakeScreenshot1 {
 		Thread.sleep(2000);
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File file = ts.getScreenshotAs(OutputType.FILE);
+//		File file = ts.getScreenshotAs(OutputType.BYTES);
 		File location = new File(".\\Screenshots\\image-"+dateStamp+".png");
 		Files.copy(file, location);
 		driver.quit();
