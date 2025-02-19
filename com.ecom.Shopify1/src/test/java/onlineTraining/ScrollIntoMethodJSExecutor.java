@@ -2,6 +2,7 @@ package onlineTraining;
 
 import java.time.Duration;
 
+import org.checkerframework.checker.units.qual.t;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,12 +19,8 @@ public class ScrollIntoMethodJSExecutor {
 		WebElement textEle = driver.findElement(By.xpath("//h2[contains(text(),'Welcome to')]"));
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		Thread.sleep(2000);
-		jse.executeScript("window.scrollIntoView(true),");
-		Thread.sleep(2000);
-		jse.executeScript("window.scrollBy(0,500)");
-		Thread.sleep(2000);
-		jse.executeScript("window.scrollTo(0,200)");
-		Thread.sleep(2000);
+		jse.executeScript("arguments[0].scrollIntoView(true)",textEle);
+		Thread.sleep(3000);
 		driver.quit();
 		System.out.println("Program Ends");
 		
