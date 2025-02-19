@@ -10,8 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import com.google.common.io.Files;
+import org.openqa.selenium.io.FileHandler;
 
 public class TakeScreenshot1 {
 	public static void main(String[] args) throws IOException, InterruptedException {
@@ -28,7 +27,9 @@ public class TakeScreenshot1 {
 		File file = ts.getScreenshotAs(OutputType.FILE);
 //		File file = ts.getScreenshotAs(OutputType.BYTES);
 		File location = new File(".\\Screenshots\\image-"+dateStamp+".png");
-		Files.copy(file, location);
+//		Files.copy(file, location);
+		FileHandler.copy(file, location);
 		driver.quit();
+//		Poulomi Maji
 	}
 }
