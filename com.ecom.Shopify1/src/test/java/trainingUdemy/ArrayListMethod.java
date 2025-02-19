@@ -19,8 +19,16 @@ public class ArrayListMethod {
 		for(int i=0;i<suggestions.size();i++)
 		{
 			System.out.println(suggestions.get(i).getText());
+			System.out.println(suggestions.get(i).getText().contains("shoe"));
 			System.out.println("----");
 		}
+		System.out.println("*************");
+		for(WebElement e:suggestions)
+		{
+			System.out.println(e.getText());
+			System.out.println("+++++++++++");
+		}
+		
 		Thread.sleep(2000);
 		driver.quit();
 		
