@@ -21,11 +21,14 @@ public class DateOfEaseMyTrip2 {
 		driver.get("https://www.easemytrip.com/");
 		driver.findElement(By.id("ddate")).click();
 		String actualDate=driver.findElement(By.xpath("")).getText();
+		String actualMonth=driver.findElement(By.xpath("")).getText();
+		String actualYear=driver.findElement(By.xpath("")).getText();
 		while(true)
 		{
 			try
 			{
-				if(expectedDate.equalsIgnoreCase(actualDate)
+				if(expectedDate.equalsIgnoreCase(actualDate))
+					if()
 						
 				break;
 			}
