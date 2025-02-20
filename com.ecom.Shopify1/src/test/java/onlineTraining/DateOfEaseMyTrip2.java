@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DateOfEaseMyTrip2 {
 	public static void main(String[] args) throws Exception {
+		String month ="April";
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver(option);
