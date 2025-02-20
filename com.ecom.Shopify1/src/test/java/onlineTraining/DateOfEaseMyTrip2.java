@@ -20,12 +20,13 @@ public class DateOfEaseMyTrip2 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.easemytrip.com/");
 		driver.findElement(By.id("ddate")).click();
-		
+		String actualDate=driver.findElement(By.xpath("")).getText();
 		while(true)
 		{
 			try
 			{
-				driver.findElement(By.id("frth_6_24/05/2025")).click();
+				if(expectedDate.equalsIgnoreCase(actualDate)
+						
 				break;
 			}
 			catch(Exception e)
