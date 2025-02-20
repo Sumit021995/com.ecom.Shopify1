@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DateOfEaseMyTrip2 {
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws Exception {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver(option);
@@ -16,6 +16,15 @@ public class DateOfEaseMyTrip2 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.easemytrip.com/");
 		driver.findElement(By.id("ddate")).click();
+//		Map<String,String> sMap = new HashMap<String,String>();
+//		sMap.put("Sunday", "0");
+//		sMap.put("Monday", "1");
+//		sMap.put("Tuesday", "2");
+//		sMap.put("Wednesday", "3");
+//		sMap.put("Thursday", "4");
+//		sMap.put("Friday", "5");
+//		sMap.put("Saturday", "6");
+//		System.out.println(sMap.get(""));
 		while(true)
 		{
 			try
