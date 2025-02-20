@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DateOfEaseMyTrip2 {
 	public static void main(String[] args) throws Exception {
-		String month ="April";
+		String expectedMonth ="April";
 		String year ="2025";
 		String date ="24";
 		
