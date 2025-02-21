@@ -24,8 +24,8 @@ public class ScreenShotDemowebShopNew {
 		Date d= new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMdd_hhmmss");
 		String value = sdf.format(d);
-		System.out.println(value);
 		//ScreenShot name Screenshot_20250219_165653
+		System.out.println(value);
 	
 		WebElement errorEle = driver.findElement(By.className("validation-summary-errors"));
 		File location = new File(".\\Screenshots\\Screenshot"+value+".png");
