@@ -2,6 +2,7 @@ package onlineTraining;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Date;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -19,6 +20,7 @@ public class ScreenShotDemowebShopNew {
 		driver.get("https://demowebshop.tricentis.com/");
 		driver.findElement(By.partialLinkText("Log in")).click();
 		driver.findElement(By.className("login-button")).click();
+		Date d= new Date();
 		WebElement errorEle = driver.findElement(By.className("validation-summary-errors"));
 		File location = new File(".\\Screenshots\\img1.png");
 		File errImgElement = errorEle.getScreenshotAs(OutputType.FILE);
