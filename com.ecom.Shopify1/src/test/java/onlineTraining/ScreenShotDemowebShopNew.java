@@ -22,7 +22,9 @@ public class ScreenShotDemowebShopNew {
 		driver.findElement(By.partialLinkText("Log in")).click();
 		driver.findElement(By.className("login-button")).click();
 		Date d= new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-YY hh-mm-ss");
+		String value = sdf.format(d);
+	
 		WebElement errorEle = driver.findElement(By.className("validation-summary-errors"));
 		File location = new File(".\\Screenshots\\img1.png");
 		File errImgElement = errorEle.getScreenshotAs(OutputType.FILE);
