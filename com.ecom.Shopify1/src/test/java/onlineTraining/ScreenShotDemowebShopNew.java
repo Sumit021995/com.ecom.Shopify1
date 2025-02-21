@@ -22,11 +22,13 @@ public class ScreenShotDemowebShopNew {
 		driver.findElement(By.partialLinkText("Log in")).click();
 		driver.findElement(By.className("login-button")).click();
 		Date d= new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-YY hh-mm-ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMdd_hhmmss");
 		String value = sdf.format(d);
+		System.out.println(value);
+		//Screenshot_20250219_165653
 	
 		WebElement errorEle = driver.findElement(By.className("validation-summary-errors"));
-		File location = new File(".\\Screenshots\\img1.png");
+		File location = new File(".\\Screenshots\\Screenshot"+value+".png");
 		File errImgElement = errorEle.getScreenshotAs(OutputType.FILE);
 		FileHandler.copy(errImgElement, location);
 		Thread.sleep(2000);
