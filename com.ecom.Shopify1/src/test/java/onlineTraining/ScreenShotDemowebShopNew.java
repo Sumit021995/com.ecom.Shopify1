@@ -1,6 +1,7 @@
 package onlineTraining;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
@@ -21,6 +22,7 @@ public class ScreenShotDemowebShopNew {
 		driver.findElement(By.partialLinkText("Log in")).click();
 		driver.findElement(By.className("login-button")).click();
 		Date d= new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat();
 		WebElement errorEle = driver.findElement(By.className("validation-summary-errors"));
 		File location = new File(".\\Screenshots\\img1.png");
 		File errImgElement = errorEle.getScreenshotAs(OutputType.FILE);
