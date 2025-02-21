@@ -27,8 +27,8 @@ public class DateOfEaseMyTrip2 {
 		{
 			try
 			{
-				if(expectedDate.equalsIgnoreCase(actualDate))
-					if()
+				if(expectedYear.equalsIgnoreCase(actualYear))
+			
 						
 				break;
 			}
