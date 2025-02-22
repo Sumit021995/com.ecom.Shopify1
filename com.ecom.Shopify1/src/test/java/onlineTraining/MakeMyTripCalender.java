@@ -20,7 +20,11 @@ public class MakeMyTripCalender {
 		
 		Thread.sleep(2000);
 		driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
-		driver.findElement(By.id("fromCity")).click();
+		driver.findElement(By.id("toCity")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys("Bengaluru");
+		Thread.sleep(2000);
+		driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
 		
 		Thread.sleep(2000);
 		driver.quit();
