@@ -22,7 +22,6 @@ public class CalendarNewCode {
 		Calendar cal = sdf.getCalendar();
 		cal.add(Calendar.DAY_OF_MONTH, 7);
 		String requestDate = sdf.format(cal.getTime());
-		//ScreenShot name Screenshot_20250219_165653
 		System.out.println(requestDate);
 	}
 }
