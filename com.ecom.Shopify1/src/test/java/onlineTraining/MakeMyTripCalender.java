@@ -14,6 +14,9 @@ public class MakeMyTripCalender {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://www.makemytrip.com/");
 		driver.findElement(By.className("commonModal__close")).click();
+		driver.findElement(By.id("fromCity")).click();
+		driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
+		
 		System.out.println("Program Ends");
 	}
 }
