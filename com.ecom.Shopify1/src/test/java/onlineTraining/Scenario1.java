@@ -19,9 +19,7 @@ public class Scenario1 {
 		for(int i=1;i<=7;i++)
 		{
 			WebElement capitals = driver.findElement(By.id("box"+i));
-		
 			WebElement countrys = driver.findElement(By.id("box"+(100+i)));
-			Thread.sleep(2000);
 			act.dragAndDrop(capitals, countrys).perform();
 		}
 	
