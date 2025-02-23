@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class MakeMyTripCalender {
 	public static void main(String[] args) throws Exception {
 		Date d = new Date();
-		SimpleDateFormat sdf =
+		SimpleDateFormat sdf = new SimpleDateFormat("");
 		String expectedMonthAndYear="April 2025";
 		System.out.println("Program Starts");
 		WebDriver driver = new ChromeDriver();
