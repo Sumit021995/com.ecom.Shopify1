@@ -2,19 +2,25 @@ package onlineTraining;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MakeMyTripCalender {
 	public static void main(String[] args) throws Exception {
-		Date d = new Date();
+		ChromeOptions option=new ChromeOptions();
+		option.addArguments("--headless");
+		Calendar cal = Calendar.getInstance();
+		Date d = cal.getTime();
+		System.out.println(d.getTime());
 		SimpleDateFormat sdf = new SimpleDateFormat("");
 		String expectedMonthAndYear="April 2025";
 		System.out.println("Program Starts");
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://www.makemytrip.com/");
