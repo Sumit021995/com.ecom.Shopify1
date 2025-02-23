@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MakeMyTripCalender {
 	public static void main(String[] args) throws Exception {
-		String expectedMonthAndYear="April 2025";
+		String expectedMonthAndYear="March 2025";
 		System.out.println("Program Starts");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -41,6 +41,7 @@ public class MakeMyTripCalender {
 			}
 		}
 		
+		Thread.sleep(2000);
 		Thread.sleep(2000);
 //		driver.quit();
 		System.out.println("Program Ends");
