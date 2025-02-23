@@ -16,8 +16,9 @@ public class MakeMyTripCalender {
 		option.addArguments("--headless");
 		Calendar cal = Calendar.getInstance();
 		Date d = cal.getTime();
-		System.out.println(d.getTime());
-		SimpleDateFormat sdf = new SimpleDateFormat("");
+//		System.out.println(d.getTime());
+		SimpleDateFormat sdf = new SimpleDateFormat();
+		System.out.println(sdf.format(d));
 		String expectedMonthAndYear="April 2025";
 		System.out.println("Program Starts");
 		WebDriver driver = new ChromeDriver(option);
