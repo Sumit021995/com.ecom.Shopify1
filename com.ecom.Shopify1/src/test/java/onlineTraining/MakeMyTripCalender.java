@@ -25,10 +25,9 @@ public class MakeMyTripCalender {
 		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys("Bengaluru");
 		Thread.sleep(2000);
 		driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
-		
-		
+		driver.findElement(By.xpath("//div[@class='DayPicker-Month']/div/div[text()='February 2025']"));	
 		Thread.sleep(2000);
-		driver.quit();
+//		driver.quit();
 		System.out.println("Program Ends");
 	}
 }
