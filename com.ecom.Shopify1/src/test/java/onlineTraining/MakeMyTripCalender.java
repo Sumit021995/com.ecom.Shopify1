@@ -37,11 +37,11 @@ public class MakeMyTripCalender {
 			}catch(Exception e)
 			{
 				driver.findElement(By.xpath("//span[@aria-label='Next Month']")).click();	
+				Thread.sleep(2000);
 			
 			}
 		}
 		
-		Thread.sleep(2000);
 		Thread.sleep(2000);
 //		driver.quit();
 		System.out.println("Program Ends");
