@@ -15,12 +15,16 @@ public class MakeMyTripCalender {
 		ChromeOptions option=new ChromeOptions();
 		option.addArguments("--headless");
 		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DAY_OF_MONTH, 4);
+		cal.add(Calendar.DAY_OF_MONTH,15);
 		Date d = cal.getTime();
 //		System.out.println(d.getTime());
 		SimpleDateFormat sdf = new SimpleDateFormat("MMMM YYYY");
-		System.out.println(sdf.format(d));
+		System.out.println(sdf.format(d));// 28 February 2025
 		String expectedMonthAndYear=sdf.format(d);
+		
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd");
+		System.out.println(sdf1.format(d));// 28 February 2025
+		String expectedDate=sdf1.format(d);
 		System.out.println("Program Starts");
 		WebDriver driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
