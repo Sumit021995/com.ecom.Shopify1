@@ -11,7 +11,7 @@ public class MakeMyTrip2 {
     public static void main(String[] args) throws InterruptedException {
         String fromCity = "new delhi";
         String toCity = "dubai";
-        String expectedMonth = "April 2025";
+        String expectedMonth = "march 2025";
         String expectedDay = "25";
         String expectedAdult = "2";
         String expectedChild = "1";
