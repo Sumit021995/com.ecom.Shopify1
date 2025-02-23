@@ -1,6 +1,7 @@
 package onlineTraining;
 
 import java.time.Duration;
+import java.util.Date;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MakeMyTripCalender {
 	public static void main(String[] args) throws Exception {
-		String expectedMonthAndYear="March 2025";
+		Date d = new Date();
+		SimpleDateFormat sdf =
+		String expectedMonthAndYear="April 2025";
 		System.out.println("Program Starts");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -31,7 +34,7 @@ public class MakeMyTripCalender {
 			try {
 				
 				driver.findElement(By.xpath("//div[@class='DayPicker-Month']/div/div[text()='"+expectedMonthAndYear+"']"));	
-				driver.findElement(By.xpath("//div[@aria-label='Thu Mar 20 2025']")).click();	
+				driver.findElement(By.xpath("//div[@aria-label='Sun Apr 20 2025']")).click();	
 				
 				break;
 			}catch(Exception e)
