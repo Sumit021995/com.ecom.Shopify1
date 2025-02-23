@@ -43,7 +43,7 @@ public class MakeMyTripCalender {
 		}
 		
 		Thread.sleep(2000);
-//		driver.quit();
+		driver.quit();
 		System.out.println("Program Ends");
 	}
 }
