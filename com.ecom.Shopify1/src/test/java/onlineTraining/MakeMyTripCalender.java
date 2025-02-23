@@ -18,7 +18,7 @@ public class MakeMyTripCalender {
 		cal.add(Calendar.DAY_OF_MONTH,15);
 		Date d = cal.getTime();
 //		System.out.println(d.getTime());
-		SimpleDateFormat sdf = new SimpleDateFormat("MMMM YYYY");
+		SimpleDateFormat sdf = new SimpleDateFormat("MMM dd YYYY"); //  Mar 11 2025
 		System.out.println(sdf.format(d));// 28 February 2025
 		String expectedMonthAndYear=sdf.format(d);
 		
