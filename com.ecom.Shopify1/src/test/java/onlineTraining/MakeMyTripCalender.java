@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MakeMyTripCalender {
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
+		String expectedMonthAndYear="April 2025";
 		System.out.println("Program Starts");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -25,8 +26,19 @@ public class MakeMyTripCalender {
 		driver.findElement(By.xpath("//input[@placeholder='To']")).sendKeys("Bengaluru");
 		Thread.sleep(2000);
 		driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
-		driver.findElement(By.xpath("//div[@class='DayPicker-Month']/div/div[text()='February 2025']"));	
-		driver.findElement(By.xpath("//span[@aria-label='Next Month']"));	
+		while(true)
+		{
+			try {
+				
+				driver.findElement(By.xpath("//div[@class='DayPicker-Month']/div/div[text()='"+expectedMonthAndYear+"']"));	
+				break;
+			}catch(Exception e)
+			{
+				driver.findElement(By.xpath("//span[@aria-label='Next Month']")).click();	
+			
+			}
+		}
+		
 		Thread.sleep(2000);
 //		driver.quit();
 		System.out.println("Program Ends");
