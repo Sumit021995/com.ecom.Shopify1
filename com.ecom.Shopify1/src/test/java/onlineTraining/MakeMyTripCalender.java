@@ -31,6 +31,8 @@ public class MakeMyTripCalender {
 			try {
 				
 				driver.findElement(By.xpath("//div[@class='DayPicker-Month']/div/div[text()='"+expectedMonthAndYear+"']"));	
+				driver.findElement(By.xpath("//div[@aria-label='Thu Mar 20 2025']")).click();	
+				
 				break;
 			}catch(Exception e)
 			{
