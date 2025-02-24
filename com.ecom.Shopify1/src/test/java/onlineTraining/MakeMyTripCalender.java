@@ -12,21 +12,20 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MakeMyTripCalender {
 	public static void main(String[] args) throws Exception {
-		ChromeOptions option=new ChromeOptions();
-		option.addArguments("--headless");
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DAY_OF_MONTH,15);
 		Date d = cal.getTime();
-//		System.out.println(d.getTime());
-		SimpleDateFormat sdf = new SimpleDateFormat("MMM dd YYYY"); //  Mar 11 2025
-		System.out.println(sdf.format(d));// 28 February 2025
+		Date d1 = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("MMMM YYYY"); //  March 2025
+		System.out.println(sdf.format(d));
+		System.out.println(d1.getTime());
 		String expectedMonthAndYear=sdf.format(d);
 		
-		SimpleDateFormat sdf1 = new SimpleDateFormat("dd");
-		System.out.println(sdf1.format(d));// 28 February 2025
-		String expectedDate=sdf1.format(d);
+		SimpleDateFormat sdf1 = new SimpleDateFormat("EEE MMM dd YYYY");
+		System.out.println(sdf1.format(d));// <Current day like(Mon)> Mon Apr 21 2025
+		String expectedDateNewFormat=sdf1.format(d);
 		System.out.println("Program Starts");
-		WebDriver driver = new ChromeDriver(option);
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get("https://www.makemytrip.com/");
@@ -34,7 +33,7 @@ public class MakeMyTripCalender {
 		driver.findElement(By.id("fromCity")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='From']")).sendKeys("Kolkata");
-		
+	
 		Thread.sleep(2000);
 		driver.findElement(By.id("react-autowhatever-1-section-0-item-0")).click();
 		driver.findElement(By.id("toCity")).click();
@@ -47,7 +46,7 @@ public class MakeMyTripCalender {
 			try {
 				
 				driver.findElement(By.xpath("//div[@class='DayPicker-Month']/div/div[text()='"+expectedMonthAndYear+"']"));	
-				driver.findElement(By.xpath("//div[@aria-label='Sun Apr 20 2025']")).click();	
+				driver.findElement(By.xpath("//div[@aria-label='"+expectedDateNewFormat+"']")).click();	
 				
 				break;
 			}catch(Exception e)
