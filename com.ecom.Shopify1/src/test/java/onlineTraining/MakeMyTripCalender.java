@@ -21,7 +21,7 @@ public class MakeMyTripCalender {
 		System.out.println(d1.getTime());
 		String expectedMonthAndYear=sdf.format(d);
 		
-		SimpleDateFormat sdf1 = new SimpleDateFormat("EEE MMM dd YYYY");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("EEE MMM dd YYYY");//Mon Apr 21 2025
 		System.out.println(sdf1.format(d));// <Current day like(Mon)> Mon Apr 21 2025
 		String expectedDateNewFormat=sdf1.format(d);
 		System.out.println("Program Starts");
