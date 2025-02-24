@@ -3,6 +3,10 @@ package ddtStarted;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class PropertiesUtility {
 	public static void main(String[] args) throws Exception {
 		FileInputStream file = new FileInputStream("C:\\Users\\sumit\\OneDrive\\Desktop\\DDT\\TestData.properties");
@@ -16,5 +20,13 @@ public class PropertiesUtility {
 		System.out.println(url);
 		System.out.println(uname);
 		System.out.println(password);
+		
+		WebDriver driver;
+		if(browser.equalsIgnoreCase("chrome"))
+			driver=new ChromeDriver();
+		else if(browser.equalsIgnoreCase("firefox"))
+			driver=new FirefoxDriver();
+		else if
+			
 	}
 }
