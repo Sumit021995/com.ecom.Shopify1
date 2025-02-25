@@ -1,8 +1,10 @@
 package ddtStarted;
 
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -15,12 +17,12 @@ public class PropertiesUtility {
 		prop.load(file);
 		String browser = prop.getProperty("browser");
 		String url = prop.getProperty("url");
-		String uname = prop.getProperty("uname");
-		String password = prop.getProperty("password");
+//		String uname = prop.getProperty("uname");
+//		String password = prop.getProperty("password");
 		System.out.println(browser);
 		System.out.println(url);
-		System.out.println(uname);
-		System.out.println(password);
+//		System.out.println(uname);
+//		System.out.println(password);
 		
 		WebDriver driver;
 		if(browser.equalsIgnoreCase("chrome"))
@@ -30,5 +32,11 @@ public class PropertiesUtility {
 		else if (browser.equalsIgnoreCase("Edge"))
 			driver = new EdgeDriver();
 		else driver = new ChromeDriver();
-	}
+		
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get(url);
+		Thread.sleep(3000);
+		driver.quit();
+		}
 }
