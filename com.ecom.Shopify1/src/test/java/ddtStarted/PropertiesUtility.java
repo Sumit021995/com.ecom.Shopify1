@@ -3,6 +3,7 @@ package ddtStarted;
 import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +24,9 @@ public class PropertiesUtility {
 		System.out.println(url);
 //		System.out.println(uname);
 //		System.out.println(password);
-		
+		Set<Object> keyStr = prop.keySet();
+		for(Object o:keyStr)
+			System.out.println(o);
 		WebDriver driver;
 		if(browser.equalsIgnoreCase("chrome"))
 			driver=new ChromeDriver();
