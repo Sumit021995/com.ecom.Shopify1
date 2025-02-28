@@ -28,7 +28,34 @@ public class ExcelUtility1 {
 		String value = df.formatCellValue(cell);
 		return value;
 		
+	}
+	
+	/**
+	 * This is a bussiness library to fetch single row datas from 
+	 * @param sheetName
+	 * @param startRowIndex
+	 * @param startCellIndex
+	 * @return List<String>
+	 * @throws EncryptedDocumentException
+	 * @throws IOException
+	 */
+	public   List<String> fetchingMultipleDataFromExcelFileForFixedRowCrm(String sheetName,int rowIndex,int startCellIndex) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream file = new FileInputStream(IPathUtility.excelFilePath);
+		Workbook wb = WorkbookFactory.create(file);
+		Sheet sh = wb.getSheet(sheetName);
+		DataFormatter df = new DataFormatter();
+		List<String> data= new ArrayList();
 		
+		Row row = sh.getRow(rowIndex);
+		for(int j=startCellIndex;j<row.getLastCellNum();j++)
+		{
+			Cell cell = row.getCell(j);
+			String value = df.formatCellValue(cell);
+			data.add(value);
+		}
+		
+		return data;
 	}
 	/**
 	 * 
@@ -60,40 +87,14 @@ public class ExcelUtility1 {
 		return data;
 		
 	}
-	/**
-	 * This is a bussiness library to fetch single row datas from 
-	 * @param sheetName
-	 * @param startRowIndex
-	 * @param startCellIndex
-	 * @return List<String>
-	 * @throws EncryptedDocumentException
-	 * @throws IOException
-	 */
-	public   List<String> fetchingMultipleDataFromExcelFileForFixedRowCrm(String sheetName,int rowIndex,int startCellIndex) throws EncryptedDocumentException, IOException
-	{
-		FileInputStream file = new FileInputStream(IPathUtility.excelFilePath);
-		Workbook wb = WorkbookFactory.create(file);
-		Sheet sh = wb.getSheet(sheetName);
-		DataFormatter df = new DataFormatter();
-		List<String> data= new ArrayList();
-		
-			Row row = sh.getRow(rowIndex);
-			for(int j=startCellIndex;j<row.getLastCellNum();j++)
-			{
-				Cell cell = row.getCell(j);
-				String value = df.formatCellValue(cell);
-				data.add(value);
-			}
-		
-			return data;
-		}
 		public static void main(String[] args) throws Exception {
 			ExcelUtility1 eUtility1 = new ExcelUtility1();
 			FileInputStream inputStream = new FileInputStream(IPathUtility.excelFilePath);
 			
-//			List<String> dataList = eUtility1.fetchingMultipleDataFromExcelFile("Sheet2", 0, 0);
-			List<String> dataList = eUtility1.fetchingMultipleDataFromExcelFileForFixedRowCrm("Sheet2", 0, 0);
+			List<String> dataList = null;
+			dataList = eUtility1.fetchingMultipleDataFromExcelFile("HrEmails", 0, 0);
 			System.out.println(dataList);
+
 			
 		}
 	}
