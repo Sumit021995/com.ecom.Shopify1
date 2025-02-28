@@ -18,4 +18,18 @@ public class Practice1 {
 		Reporter.log("test2 executed");
 		
 	}
+	@Test
+	public void test3()
+	{
+//		System.out.println("test2 executed");
+		Reporter.log("test3 executed");
+		
+	}
+	@Test
+	public void test4()
+	{
+//		System.out.println("test2 executed");
+		Reporter.log("test4 executed",true);
+		
+	}
 }
