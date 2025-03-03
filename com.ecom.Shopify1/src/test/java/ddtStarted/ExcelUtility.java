@@ -10,7 +10,7 @@ public class ExcelUtility {
 	{
 		FileInputStream file = new FileInputStream(".\\src\\test\\resources\\TestData\\HrEmailed.xlsx");
 		Workbook wb = WorkbookFactory.create(file);
-		String stringCellValue = wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
+		String stringCellValue = wb.getSheet(sheetName).getRow(rowIndex).getCell(cellIndex).getStringCellValue();
 		
 		return stringCellValue;
 	}
