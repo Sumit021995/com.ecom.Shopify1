@@ -17,7 +17,7 @@ public class Practice3 {
 		Thread.sleep(2000);
 		driver.quit();
 	}
-	@Test
+	@Test(groups= {"Social"})
 	public void navigateToFacebook() throws InterruptedException
 	{
 		WebDriver driver = new ChromeDriver();
